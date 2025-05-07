@@ -119,7 +119,7 @@ npm start
 
 ## 🙌 Team
 
-* Vijey Roshan
-* Sriram
-* Madhesh Kanna
-* Jaishree
+* Sriram KV
+* Madhesh Kanna A
+* Jaishree Y
+* Muralidharan S

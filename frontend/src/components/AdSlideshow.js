@@ -27,12 +27,12 @@ const AdSlideshow = () => {
   const navigate = useNavigate();
 
   const { ageGroup, gender } = location.state || {};
-  const feedbackQRUrl = "https://adgorithmbucket-2025-new.s3.ap-south-1.amazonaws.com/form.png";
+  const feedbackQRUrl = "https://adgorithmbucket.s3.ap-south-1.amazonaws.com/form.png";
 
   useEffect(() => {
     const fetchAds = async () => {
       try {
-        const baseUrl = "https://adgorithmbucket-2025-new.s3.ap-south-1.amazonaws.com";
+        const baseUrl = "https://adgorithmbucket.s3.ap-south-1.amazonaws.com/adsdataset";
         const genderFolder = gender === "Woman" ? "Woman" : "Man";
         const ageRange = getAgeRange(ageGroup);
         const imageFormats = ['jpg', 'png', 'jpeg'];
@@ -41,7 +41,7 @@ const AdSlideshow = () => {
         for (let i = 1; i <= 5; i++) {
           for (let format of imageFormats) {
             const adUrl = `${baseUrl}/${genderFolder}/${ageRange}/ad${i}.${format}`;
-            const qrUrl = `${baseUrl}/${genderFolder}/qr/${ageRange}/ad${i}.png`;
+            const qrUrl = `${baseUrl}/${genderFolder}/${ageRange}(qr)/ad${i}.png`;
             const isValidAd = await validateImage(adUrl);
             const isValidQR = await validateImage(qrUrl);
 
